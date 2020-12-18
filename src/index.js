@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './components/EstruturaDaPagina.css';
 import './components/searchbar.css'
-import Amorinha from './pages/Amorinha';
+import PaginaDeControle from './pages/PaginaDeControle';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Amorinha />
+    <PaginaDeControle />
   </React.StrictMode>,
   document.getElementById('root')
 );

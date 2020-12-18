@@ -5,7 +5,7 @@ import Listagem from '../alunos/Listagem';
 import { alunos } from '../util/constants';
 import SearchBar from '../components/searchbar';
 
-class Amorinha extends Component {
+class PaginaDeControle extends Component {
     constructor(props) { //inicializa as informações
         super(props);
 
@@ -17,13 +17,12 @@ class Amorinha extends Component {
     } 
 
     editarAluno = (aluno) => {
-       console.log("aluno em edição no componente Amorinha: ", aluno)
+       console.log("aluno em edição no componente PaginaDeControle: ", aluno)
        this.setState({alunoEmEdicao: aluno})
-
     }
 
     excluirAluno = (aluno) => {
-        console.log("aluno exlcuído no componente Amorinha: ", aluno)
+        console.log("aluno exlcuído no componente PaginaDeControle: ", aluno)
       
     }
  
@@ -52,7 +51,7 @@ class Amorinha extends Component {
 
 }
 
-export default Amorinha;
+export default PaginaDeControle;
 
 //o h2 vai ser passado como children da estruturaDaPagina
 //tenho que ir na estruturadapagina e dizer que tem um children

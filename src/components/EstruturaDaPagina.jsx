@@ -5,13 +5,13 @@ class EstruturaDaPagina extends React.Component {
 
     render() {
         return  (
-        <div className='mainPage'>
+        <body>
             <div className='header'>
                 <h1>Escola Amorinha</h1>
                 <h2>{this.props.title}</h2> 
             </div>
             {this.props.children}
-        </div>
+        </body>
         )
     }
 }
