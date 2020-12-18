@@ -19,6 +19,6 @@ class EstruturaDaPagina extends React.Component {
 export default EstruturaDaPagina;
 
 //meu componente está recebendo uma propriedade title
-// quem chamar ele vai ter que passar essa propriedade
+// quando chamar ele vai ter que passar essa propriedade
 
 //o componente recebe um children também
