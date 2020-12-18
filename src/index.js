@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './assets/css/EstruturaDaPagina.css';
+import './components/EstruturaDaPagina.css';
 import './components/searchbar.css'
-import Consulta from './pages/Consulta';
+import Amorinha from './pages/Amorinha';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Consulta />
+    <Amorinha />
   </React.StrictMode>,
   document.getElementById('root')
 );

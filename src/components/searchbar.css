@@ -1,4 +1,6 @@
-.btnsearch {
-    color: blue;
-  
+input {
+    margin: 0px 20px;
+    padding: 8px 150px;
+    border: 1px solid rgba(70, 69, 69, 0.842);
+    border-radius: 5px;
 }

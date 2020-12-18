@@ -1,6 +1,7 @@
 .mainPage {
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(216, 214, 214, 0.753);
+    
 }
 
 .header {
@@ -10,4 +11,9 @@
     border-bottom: 2px rgb(148, 146, 146) solid;
     background-color: rgba(181, 203, 238, 0.918);
 }
+
+.section {
+    min-height: 35%;
+  
+  }
 
