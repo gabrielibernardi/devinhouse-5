@@ -4,8 +4,12 @@ import './index.css';
 import './components/EstruturaDaPagina.css';
 import './components/searchbar.css'
 import PaginaDeControle from './pages/PaginaDeControle';
-
 import reportWebVitals from './reportWebVitals';
+import { criarServidor } from './services/mirage-server';
+
+if (process.env.NODE_ENV === "development") {
+  criarServidor({environment: "development"})
+}
 
 ReactDOM.render(
   <React.StrictMode>

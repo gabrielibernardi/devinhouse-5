@@ -2,28 +2,56 @@ import React, {Component} from 'react';
 import EstruturaDaPagina from '../components/EstruturaDaPagina';
 import Section from '../components/Section';
 import Listagem from '../alunos/Listagem';
-import { alunos } from '../util/constants';
 import SearchBar from '../components/searchbar';
+import AlunoAPI from '../services/alunos'
 
 class PaginaDeControle extends Component {
     constructor(props) { //inicializa as informações
         super(props);
 
         this.state = {alunos: []} //atribuindo valor ao estado
+        this.excluirAluno = this.excluirAluno.bind(this)
     }
 
    componentDidMount() { //renderiza depois que carrega a página (lifecyclemeth.)
-        this.setState({alunos: alunos})
+        this.carregarAlunos();
     } 
 
-    editarAluno = (aluno) => {
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.alunoEmEdicao === prevState.alunoEmEdicao) {
+            return;
+        }
+    }
+
+    async carregarAlunos() {
+        const alunos = await AlunoAPI.buscarAlunos()
+        this.setState({alunos: alunos})
+    }
+
+     editarAluno = (aluno) => {
        console.log("aluno em edição no componente PaginaDeControle: ", aluno)
        this.setState({alunoEmEdicao: aluno})
     }
 
-    excluirAluno = (aluno) => {
-        console.log("aluno exlcuído no componente PaginaDeControle: ", aluno)
+    excluirAluno = (alunoAExcluir) => {
+        console.log("aluno exlcuído no componente PaginaDeControle: ", alunoAExcluir)
+        this.setState({alunos: this.state.alunos.filter(aluno => aluno.name !== alunoAExcluir.name)})
       
+    }
+
+    salvarAluno = aluno => {
+        if (aluno.id) {
+            AlunoAPI.atualizarAluno(aluno).then(() => {
+                this.carregarAlunos();
+                this.setState({alunoEmEdicao: null});
+            });
+            return;
+        }
+
+        AlunoAPI.inserirAluno(aluno).then(() => {
+            this.carregarAluno();
+            this.setState({alunoEmEdicao: null})
+        });
     }
  
     render() {

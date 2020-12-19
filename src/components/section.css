@@ -4,9 +4,9 @@
 }
 
 button {
-    color: rgb(0, 140, 255);
-    background-color: white;
-    border: solid black 1px;
+    color: rgb(253, 253, 253);
+    background-color: rgb(76, 101, 241);
+    border: solid  rgb(76, 101, 241) 1px;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 10px 0px;
