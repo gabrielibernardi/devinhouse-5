@@ -25,18 +25,16 @@ class PaginaDeControle extends Component {
 
     async carregarAlunos() {
         const alunos = await AlunoAPI.buscarAlunos()
+        console.log(alunos)
         this.setState({alunos: alunos})
     }
 
      editarAluno = (aluno) => {
-       console.log("aluno em edição no componente PaginaDeControle: ", aluno)
        this.setState({alunoEmEdicao: aluno})
     }
 
-    excluirAluno = (alunoAExcluir) => {
-        console.log("aluno exlcuído no componente PaginaDeControle: ", alunoAExcluir)
-        this.setState({alunos: this.state.alunos.filter(aluno => aluno.name !== alunoAExcluir.name)})
-      
+    excluirAluno = (aluno) => {
+        AlunoAPI.excluirAluno(aluno.id).then(() => this.carregarAlunos())
     }
 
     salvarAluno = aluno => {

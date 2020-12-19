@@ -20,13 +20,14 @@ para a tela*/
 
 }
 
-render() {
+render() {    
 if (!this.props.alunos || this.props.alunos.length === 0) {
-return <span>Não esxitem alunos cadastrados</span>
+return <span>Não existem alunos cadastrados</span>
 
 }
 return (
 <>
+{this.props.alunos && this.props.alunos.length > 0 &&
     <div className='listagem'>
         <table className='listagem-alunos'>
             <thead>
@@ -41,7 +42,7 @@ return (
             </thead>
             <tbody>
                 {this.props.alunos.map(aluno => (
-                <tr key={aluno.name}>
+                <tr key={aluno.id}>
                     <td>{aluno.name}</td>
                     <td>{aluno.data}</td>
                     <td>{aluno.turma}</td>
@@ -54,10 +55,12 @@ return (
                 ))}
             </tbody>
         </table>
-    </div>
+    </div> 
+    }
 </>
 )
-}}
+}
+}
 
 
 export default Listagem;
